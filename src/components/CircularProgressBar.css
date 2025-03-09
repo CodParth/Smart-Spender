@@ -1,0 +1,55 @@
+.circular-progressbar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #f0f0f0; /* Light background for contrast */
+  border-radius: 50%; /* Make it circular */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.circular-progressbar:hover {
+  background-color: #e0e0e0; /* Darker background on hover */
+}
+
+.circle {
+  fill: none;
+  stroke-width: 10;
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.circle.bg {
+  stroke: #d3d3d3; /* Background circle color */
+}
+
+.circle.animating {
+  animation: progress-animation 1s ease-in-out forwards;
+}
+
+@keyframes progress-animation {
+  0% {
+    stroke-dashoffset: var(--circumference);
+  }
+  100% {
+    stroke-dashoffset: var(--progress);
+  }
+}
+
+.percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #007bff; /* Blue color for percentage text */
+}
+
+/* Gradient stroke */
+.circle {
+  stroke: url(#gradient);
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
